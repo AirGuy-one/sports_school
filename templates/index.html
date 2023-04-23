@@ -1,0 +1,148 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header-div">
+        <div class="logo">
+            <p>LOGO</p>
+        </div>
+        <div class="about">
+            <a href="#" title="access">Access</a>
+            <a href="#" title="support">Support</a>
+            <a href="#" title="contacts">Contacts</a>
+            <a href="#" title="faq">FAQ</a>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="main-div">
+        <div class="txt-here">
+            <p>Sports school</p>
+            <p>number 3</p>
+        </div>
+    </div>
+    <div class="news">
+        <h2>News of this sport school</h2>
+        <div class="img-article">
+            {% for one_news in news %}
+                {% if forloop.counter0|divisibleby:2 %}
+                <div class="flip-box">
+                    <div class="flip-box-inner">
+                        {% if one_news.first_photo %}
+                            <div class="image">
+                                <img src="{{ one_news.first_photo }}" alt="">
+                            </div>
+                        {% else %}
+                            <div class="image">
+                                <h2>It's no photo here</h2>
+                                <p>Our school is the best, just believe me</p>
+                            </div>
+                        {% endif %}
+                        <div class="image-back">
+                            <h2>Paris</h2>
+                            <p>What an amazing city</p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="article">
+                        <h3>{{ one_news.title }}</h3>
+                        <p>{{ one_news.description }}</p>
+                    </div>
+                {% else %}
+                    <div class="article">
+                        <h3>{{ one_news.title }}</h3>
+                        <p>{{ one_news.description }}</p>
+                    </div>
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            {% if one_news.first_photo %}
+                                <div class="image">
+                                    <img src="{{ one_news.first_photo }}" alt="">
+                                </div>
+                            {% else %}
+                                <div class="image">
+                                    <h2>It's no photo here</h2>
+                                    <p>Our school is the best, just believe me</p>
+                                </div>
+                            {% endif %}
+                            <div class="image-back">
+                                <h2>Paris</h2>
+                                <p>What an amazing city</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="games-places">
+        <h2>Soccer games in our school</h2>
+        <div class="ptable">
+            <table>
+
+                <tr class="col">
+                    <th>#</th>
+                    <th>team 1</th>
+                    <th>team 2</th>
+                    <th>result</th>
+                </tr>
+                <tr class="wpos">
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                    <td>Germany</td>
+                </tr>
+                <tr class="wpos">
+                    <td>Another text here</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                    <td>Germany</td>
+                </tr>
+                <tr class="pos">
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer-div">
+        <div class="footer-item">
+            <p>© 2013–2023 Signal, a 501c3 nonprofit.Signal is a registered trademark in the United States and other countries.</p>
+        </div>
+        <div class="footer-item">
+            <h3>phone</h3>
+            <p>+7 (910) 999 88-77</p>
+        </div>
+        <div class="footer-item">
+            <h3>address</h3>
+            <p>kostroma town, profsoyznaya street, h. 32, fl. 1</p>
+        </div>
+        <div class="footer-item">
+            <h3>social media</h3>
+            <p>facebook</p>
+            <p>vk</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

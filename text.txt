@@ -1,0 +1,15 @@
+default picture is football field
+сведение об организации
+документы
+новости
+фотогалерея
+вк прикрутить
+медицинская страница
+противодействие корупции
+Структурное подразделение "Академия футбола" - не вот так стремно, с картинками описание вот этого
+страница контактов взять с главной, то есть прямо как на ней, c картой Яндекса
+
+Ведется набор мальчиков и девочек 2018 года рождения и старше.(взять с галвной их и добавить на главную новую)
+
+finished on - I got the API key from symlix and successfully recieve the requests from it then I need to organize payment form and button. In short, there are wallets and when one wallet pay to another, another recieve the message about it. You need to configure the enter of data and process of recieving.
+
