@@ -7,13 +7,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Спорт школа 3</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap"
-          rel="stylesheet">
 </head>
 <body>
 <header>
@@ -22,22 +17,22 @@
             <p>LOGO</p>
         </div>
         <div class="about">
-            <a href="#" title="access">Access</a>
-            <a href="#" title="support">Support</a>
-            <a href="#" title="contacts">Contacts</a>
-            <a href="#" title="faq">FAQ</a>
+            <a href="#" title="access">Об организации</a>
+            <a href="#" title="faq">Новости</a>
+            <a href="#" title="support">Поддержка</a>
+            <a href="#" title="contacts">Условия приема</a>
         </div>
     </div>
 </header>
 <main>
     <div class="main-div">
         <div class="txt-here">
-            <p>Sports school</p>
-            <p>number 3</p>
+            <p>Спортивная школа</p>
+            <p>номер 3</p>
         </div>
     </div>
     <div class="news">
-        <h2>News of this sport school</h2>
+        <h2>Новости спортивной школы</h2>
         <div class="img-article">
             {% for one_news in news %}
                 {% if forloop.counter0|divisibleby:2 %}
@@ -49,8 +44,8 @@
                             </div>
                         {% else %}
                             <div class="image">
-                                <h2>It's no photo here</h2>
-                                <p>Our school is the best, just believe me</p>
+                                <h2>Здесь нет фото</h2>
+                                <p>Дополнительная информация о нашей школе</p>
                             </div>
                         {% endif %}
                         <div class="image-back">
@@ -91,7 +86,7 @@
         </div>
     </div>
     <div class="games-places">
-        <h2>Soccer games in our school</h2>
+        <h2>Футбольные матчи нашей школы</h2>
         <div class="ptable">
             <table>
 
@@ -129,17 +124,17 @@
             <p>© 2013–2023 Signal, a 501c3 nonprofit.Signal is a registered trademark in the United States and other countries.</p>
         </div>
         <div class="footer-item">
-            <h3>phone</h3>
+            <h3>телефон</h3>
             <p>+7 (910) 999 88-77</p>
         </div>
         <div class="footer-item">
-            <h3>address</h3>
-            <p>kostroma town, profsoyznaya street, h. 32, fl. 1</p>
+            <h3>адрес</h3>
+            <p>Кострома, Профсоюзная улица, д. 32, кв. 1</p>
         </div>
         <div class="footer-item">
-            <h3>social media</h3>
-            <p>facebook</p>
-            <p>vk</p>
+            <h3>социальные сети</h3>
+            <p>Facebook</p>
+            <p>ВК</p>
         </div>
     </div>
 </footer>
