@@ -25,7 +25,6 @@ header {
 
 .about {
     display: flex;
-    gap: 3em;
 }
 
 .about a {
@@ -34,18 +33,30 @@ header {
     justify-content: center;
     text-decoration: none;
     font-size: 24px;
+    padding: 10px 20px;
     color: white;
-    width: 80px;
-    height: 40px;
+    width: auto;
+    height: 66px;
     text-align: center;
     transition: font-size 0.3s ease-in-out;
+    border: 1px black solid;
 }
 
 .about a:hover {
     text-decoration: none;
-    color: #93c7de;
+    border: 1px white solid;
+    animation: blink 0.5s;
 }
 
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.dropdown {
+    position: relative;
+}
 
 .drop-btn {
     padding: 10px;
@@ -57,8 +68,10 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    width: auto;
-    height: auto;
+    top: 70px;
+    left: 0;
+    right: 0;
+    min-width: 500px;
 }
 
 .dropdown-content a {
@@ -69,6 +82,7 @@ header {
     color: #757575;
     width: auto;
     height: auto;
+    border: none;
 }
 
 .dropdown-content a:hover {
@@ -76,6 +90,8 @@ header {
     background: #757575;
     color: #ffffff;
     transition: background 0.1s ease-in-out;
+    border: none;
+    animation: none;
 }
 
 .dropdown:hover .dropdown-content {
