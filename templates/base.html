@@ -1,0 +1,68 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Спорт школа 3</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <div class="header-div">
+        <div class="logo-wrapper">
+            <a href="{% url 'home' %}"><img src="media/background_images/sports_school_logo.jpg" alt="logo_image"></a>
+        </div>
+        <div class="about">
+            <div class="dropdown">
+                <a class="drop-btn">Об организации</a>
+                <div class="dropdown-content">
+                    <a href="{% url "basic_info_url" %}">Основные сведения</a>
+                    <a href="{% url "structure_management_url" %}">Структура и органы управления образовательной организацией</a>
+                    <a href="{% url "documents_url" %}">Документы</a>
+                    <a href="{% url "education_url" %}">Образование</a>
+                    <a href="{% url "pedagogical_staff_url" %}">Руководство. Педагогический (научно-педагогический) состав</a>
+                    <a href="{% url "support_and_equipment_url" %}">Материально-техническое обеспечение и оснащенность образовательного процесса</a>
+                    <a href="{% url "paid_services_url" %}">Платные образовательные услуги</a>
+                    <a href="{% url "financial_and_economic_url" %}">Финансово-хозяйственная деятельность</a>
+                    <a href="{% url "vacant_seats_url" %}">Вакантные места для приема (перевода) обучающихся</a>
+                    <a href="{% url "available_environment_url" %}">Доступная среда</a>
+                    <a href="{% url "international_cooperation_url" %}">Международное сотрудничество</a>
+                </div>
+            </div>
+            <a href="#" title="faq">Новости</a>
+            <a href="#" title="support">Поддержка</a>
+            <a href="#" title="contacts">Условия приема</a>
+
+        </div>
+    </div>
+</header>
+
+{% block main %}{% endblock %}
+
+<footer>
+    <div class="footer-div">
+        <div class="footer-item">
+            <p>© 2013–2023 Спортивная школа номер 3. Информация про эту школу.</p>
+        </div>
+        <div class="footer-item">
+            <h3>телефон</h3>
+            <p>+7 (910) 999 88-77</p>
+        </div>
+        <div class="footer-item">
+            <h3>адрес</h3>
+            <p>Кострома, Профсоюзная улица, д. 32, кв. 1</p>
+        </div>
+        <div class="footer-item">
+            <h3>социальные сети</h3>
+            <p>Facebook</p>
+            <p>ВК</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
