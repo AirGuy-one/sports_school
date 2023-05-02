@@ -1,99 +1,103 @@
 {% extends "base.html" %}
 
 {% block main %}
-<main>
-    <div class="main-div">
-        <div class="background-image-layer"></div>
-        <div class="txt-here">
-            <p>Спортивная школа</p>
-            <p>номер 3</p>
+    <main>
+        <div class="main-div">
+            <div class="background-image-layer"></div>
+            <div class="txt-here">
+                <p>Спортивная школа</p>
+                <p>номер 3</p>
+            </div>
         </div>
-    </div>
-    <div class="news">
-        <h2>Новости спортивной школы</h2>
-        <div class="img-article">
-            {% for one_news in news %}
-                {% if forloop.counter0|divisibleby:2 %}
-                    <div class="flip-box">
-                        <div class="flip-box-inner">
-                            {% if one_news.first_photo %}
-                                <div class="image">
-                                    <img src="{{ one_news.first_photo }}" alt="">
+        <div class="news">
+            <h2>Новости спортивной школы</h2>
+            <div class="img-articles">
+                {% for one_news in news %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                        <div class="flip-box-article">
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    {% if one_news.first_photo %}
+                                        <div class="image">
+                                            <img src="{{ one_news.first_photo }}" alt="">
+                                        </div>
+                                    {% else %}
+                                        <div class="image">
+                                            <h2>Здесь нет фото</h2>
+                                            <p>Дополнительная информация о нашей школе</p>
+                                        </div>
+                                    {% endif %}
+                                    <div class="image-back">
+                                        <h2>Amazing</h2>
+                                        <p>Обратная сторона карточки</p>
+                                    </div>
                                 </div>
-                            {% else %}
-                                <div class="image">
-                                    <h2>Здесь нет фото</h2>
-                                    <p>Дополнительная информация о нашей школе</p>
-                                </div>
-                            {% endif %}
-                            <div class="image-back">
-                                <h2>Paris</h2>
-                                <p>What an amazing city</p>
+                            </div>
+                            <div class="article">
+                                <h3>{{ one_news.title }}</h3>
+                                <p>{{ one_news.description }}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="article">
-                        <h3>{{ one_news.title }}</h3>
-                        <p>{{ one_news.description }}</p>
-                    </div>
-                {% else %}
-                    <div class="article">
-                        <h3>{{ one_news.title }}</h3>
-                        <p>{{ one_news.description }}</p>
-                    </div>
-                    <div class="flip-box">
-                        <div class="flip-box-inner">
-                            {% if one_news.first_photo %}
-                                <div class="image">
-                                    <img src="{{ one_news.first_photo }}" alt="">
+                    {% else %}
+                        <div class="flip-box-article">
+                            <div class="article">
+                                <h3>{{ one_news.title }}</h3>
+                                <p>{{ one_news.description }}</p>
+                            </div>
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    {% if one_news.first_photo %}
+                                        <div class="image">
+                                            <img src="{{ one_news.first_photo }}" alt="">
+                                        </div>
+                                    {% else %}
+                                        <div class="image">
+                                            <h2>Здесь нет фото</h2>
+                                            <p>Дополнительная информация о нашей школе</p>
+                                        </div>
+                                    {% endif %}
+                                    <div class="image-back">
+                                        <h2>Amazing</h2>
+                                        <p>Обратная сторона карточки</p>
+                                    </div>
                                 </div>
-                            {% else %}
-                                <div class="image">
-                                    <h2>It's no photo here</h2>
-                                    <p>Our school is the best, just believe me</p>
-                                </div>
-                            {% endif %}
-                            <div class="image-back">
-                                <h2>Paris</h2>
-                                <p>What an amazing city</p>
                             </div>
                         </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    <div class="games-places">
-        <h2>Футбольные матчи нашей школы</h2>
-        <div class="ptable">
-            <table>
+        <div class="games-places">
+            <h2>Футбольные матчи нашей школы</h2>
+            <div class="ptable">
+                <table>
 
-                <tr class="col">
-                    <th>#</th>
-                    <th>team 1</th>
-                    <th>team 2</th>
-                    <th>result</th>
-                </tr>
-                <tr class="wpos">
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td>Germany</td>
-                </tr>
-                <tr class="wpos">
-                    <td>Another text here</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td>Germany</td>
-                </tr>
-                <tr class="pos">
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                </tr>
-            </table>
+                    <tr class="col">
+                        <th>#</th>
+                        <th>team 1</th>
+                        <th>team 2</th>
+                        <th>result</th>
+                    </tr>
+                    <tr class="wpos">
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr class="wpos">
+                        <td>Another text here</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr class="pos">
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 {% endblock %}

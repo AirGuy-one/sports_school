@@ -144,7 +144,7 @@ header {
     line-height: 3em;
 }
 
-.img-article {
+.img-articles {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -154,11 +154,13 @@ header {
 .article {
     height: 18em;
     width: 25em;
+    margin: auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 2em;
 }
 
 .article h3 {
@@ -169,13 +171,18 @@ header {
 }
 
 .article p {
-    font-size: 25px;
+    font-size: 1.2em;
+}
+
+.flip-box-article {
+    display: flex;
+    gap: 4em;
 }
 
 .flip-box {
     background-color: transparent;
-    height: 18em;
-    width: 25em;
+    height: 25em;
+    width: 35em;
     border: 1px solid #f1f1f1;
     border-radius: 2em;
     perspective: 1000px;
@@ -183,8 +190,8 @@ header {
 
 .flip-box-inner {
     position: relative;
-    width: 25em;
-    height: 18em;
+    height: 25em;
+    width: 35em;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -197,20 +204,24 @@ header {
 
 .image, .image-back {
     position: absolute;
-    height: 18em;
-    width: 25em;
+    height: 25em;
+    width: 35em;
     backface-visibility: hidden;
 }
 
 img {
-    height: 18em;
-    width: 25em;
+    height: 25em;
+    width: 35em;
 }
 
 .image, img {
     border-radius: 2em;
     background-color: #d2d2d2;
     color: black;
+}
+
+.image h2 {
+    font-size: 2.5em;
 }
 
 .image-back {
