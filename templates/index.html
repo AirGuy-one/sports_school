@@ -13,8 +13,8 @@
 <body>
 <header>
     <div class="header-div">
-        <div class="logo">
-            <p>LOGO</p>
+        <div class="logo-wrapper">
+            <img src="media/background_images/sports_school_logo.jpg" alt="logo_image">
         </div>
         <div class="about">
             <div class="dropdown">
@@ -42,6 +42,7 @@
 </header>
 <main>
     <div class="main-div">
+        <div class="background-image-layer"></div>
         <div class="txt-here">
             <p>Спортивная школа</p>
             <p>номер 3</p>
@@ -52,24 +53,24 @@
         <div class="img-article">
             {% for one_news in news %}
                 {% if forloop.counter0|divisibleby:2 %}
-                <div class="flip-box">
-                    <div class="flip-box-inner">
-                        {% if one_news.first_photo %}
-                            <div class="image">
-                                <img src="{{ one_news.first_photo }}" alt="">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            {% if one_news.first_photo %}
+                                <div class="image">
+                                    <img src="{{ one_news.first_photo }}" alt="">
+                                </div>
+                            {% else %}
+                                <div class="image">
+                                    <h2>Здесь нет фото</h2>
+                                    <p>Дополнительная информация о нашей школе</p>
+                                </div>
+                            {% endif %}
+                            <div class="image-back">
+                                <h2>Paris</h2>
+                                <p>What an amazing city</p>
                             </div>
-                        {% else %}
-                            <div class="image">
-                                <h2>Здесь нет фото</h2>
-                                <p>Дополнительная информация о нашей школе</p>
-                            </div>
-                        {% endif %}
-                        <div class="image-back">
-                            <h2>Paris</h2>
-                            <p>What an amazing city</p>
                         </div>
                     </div>
-                </div>
                     <div class="article">
                         <h3>{{ one_news.title }}</h3>
                         <p>{{ one_news.description }}</p>
