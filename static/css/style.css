@@ -7,11 +7,12 @@
 
 header {
     background-color: black;
+    position: relative;
 }
 
 .header-div {
-    margin: 0 12%;
-    padding: 0 2em;
+    margin: 0 auto;
+    max-width: 1280px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -109,30 +110,44 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+}
+
+.main-div .txt-here {
+    max-width: 1000px;
 }
 
 .background-image-layer {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-image: url("/media/background_images/football_game.jpg");
     background-size: cover;
     opacity: 0.5;
+    left: 0;
+    right: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-div p {
     text-align: center;
-    font-size: 6em;
+    font-size: 3em;
     position: relative;
     z-index: 1;
     color: black;
 }
 
-.news {
-    margin: 0 12%;
-    padding-bottom: 4em;
+.news h2, .img-articles {
+    max-width: 1280px;
+}
+
+.news .img-articles {
+    padding-bottom: 3em;
 }
 
 .news h2 {
@@ -233,12 +248,21 @@ img {
 
 .games-places {
     background-color: black;
-    padding: 30px 0;
+    padding: 30px 0 0 0;
+    margin-bottom: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*.games-places h2, th, td {*/
 /*    font-family: Fjalla One, serif;*/
 /*}*/
+
+.games-places h2, .ptable {
+    width: 1280px;
+}
 
 .games-places h2 {
     text-align: center;
@@ -246,7 +270,6 @@ img {
     font-size: 45px;
     color: #ffe221;
     display: block;
-
 }
 
 .ptable table {
@@ -308,13 +331,15 @@ table .col {
 
 footer {
     background-color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-div {
     display: flex;
     justify-content: space-evenly;
-    margin: 0 12%;
-    padding: 20px 0;
+    max-width: 1280px;
+    padding: 15px 0;
 }
 
 .footer-item {
@@ -323,7 +348,7 @@ footer {
     justify-content: start;
     align-items: center;
     text-align: center;
-    width: 10em;
+    width: auto;
     color: black;
 }
 
