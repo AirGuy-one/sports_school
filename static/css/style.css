@@ -5,6 +5,10 @@
     font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     background-color: black;
     position: relative;
