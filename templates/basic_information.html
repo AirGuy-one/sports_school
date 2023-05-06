@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head-links %}<link rel="stylesheet" href="{% static 'css/basic-information-style.css' %}">{% endblock %}
 
 {% block main %}
-    <main style="max-width: 1200px; margin: 0 auto;">
+    <main>
         <h1>Основные сведения о школе</h1>
         <p>Полное наименование: ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ ДОПОЛНИТЕЛЬНОГО ОБРАЗОВАНИЯ КОСТРОМСКОЙ ОБЛАСТИ
             «СПОРТИВНАЯ ШКОЛА ИМЕНИ ВЫДАЮЩЕГОСЯ ЗЕМЛЯКА ГЕОРГИЯ АЛЕКСАНДРОВИЧА ЯРЦЕВА»</p>

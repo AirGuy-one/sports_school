@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: black;
+    position: relative;
+}
+
+.header-div {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    height: 80px;
+}
+
+.logo-wrapper img {
+    height: 80px;
+    width: 80px;
+}
+
+.about {
+    display: flex;
+}
+
+.about a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    color: white;
+    width: auto;
+    height: 66px;
+    text-align: center;
+    transition: font-size 0.3s ease-in-out;
+    border: 1px black solid;
+}
+
+.about a:hover {
+    text-decoration: none;
+    border: 1px white solid;
+    animation: blink 0.5s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.dropdown {
+    position: relative;
+    z-index: 2;
+}
+
+.drop-btn {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    min-width: 500px;
+}
+
+.dropdown-content a {
+    font-size: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: #ffffff;
+    color: #757575;
+    width: auto;
+    height: auto;
+    border: none;
+}
+
+.dropdown-content a:hover {
+    font-size: 20px;
+    background: #757575;
+    color: #ffffff;
+    transition: background 0.1s ease-in-out;
+    border: none;
+    animation: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+footer {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-div {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    padding: 15px 0;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    color: black;
+}
+
+.footer-item p {
+    width: 300px;
+}
+
+.footer-item h3 {
+    font-weight: normal;
+}
