@@ -16,7 +16,7 @@ header {
 
 .header-div {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,9 +57,15 @@ header {
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.7; }
-  100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .dropdown {
@@ -107,29 +113,48 @@ header {
     display: block;
 }
 
-.main-div {
-    height: 35em;
-    position: relative;
+.slider-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 35em;
+    position: relative;
+    overflow: hidden;
     width: 100%;
 }
 
-.main-div .txt-here {
-    max-width: 1000px;
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100vh;
 }
 
-.background-image-layer {
-    position: absolute;
+.slide-item {
+    flex-shrink: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/media/background_images/football_game.jpg");
-    background-size: cover;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
     opacity: 0.5;
-    left: 0;
-    right: 0;
+}
+
+.school-name-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 1;
+    max-width: 1200px;
+}
+
+.school-name-text p {
+    font-weight: bold;
+    text-shadow: #4b4b4b 2px 2px 10px;
 }
 
 main {
@@ -138,7 +163,7 @@ main {
     align-items: center;
 }
 
-.main-div p {
+.slider-container p {
     text-align: center;
     font-size: 3em;
     position: relative;
@@ -147,7 +172,7 @@ main {
 }
 
 .news h2, .img-articles {
-    max-width: 1280px;
+    max-width: 1200px;
 }
 
 .news .img-articles {
@@ -265,7 +290,7 @@ img {
 /*}*/
 
 .games-places h2, .ptable {
-    width: 1280px;
+    width: 1200px;
 }
 
 .games-places h2 {
@@ -342,7 +367,7 @@ footer {
 .footer-div {
     display: flex;
     justify-content: space-evenly;
-    max-width: 1280px;
+    max-width: 1200px;
     padding: 15px 0;
 }
 
