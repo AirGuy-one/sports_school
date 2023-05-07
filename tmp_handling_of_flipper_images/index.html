@@ -10,37 +10,82 @@
 </head>
 <body>
 
-<div class="slider-container">
-    <div class="slider-wrapper">
-        <div class="slide-item">
-            <img src="image1.png" alt="Slide 1">
-        </div>
-        <div class="slide-item">
-            <img src="image2.png" alt="Slide 2">
-        </div>
-    </div>
-    <div class="slider-buttons">
-        <button class="prev-btn">previous</button>
-        <button class="next-btn">next</button>
-    </div>
-</div>
+<button class="loading-button">
+    <span>Loading</span>
+</button>
+<style>
+    .loading-button {
+        position: relative;
+        overflow: hidden;
+        background-color: #ccc;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .loading-button span {
+        display: block;
+        position: relative;
+        z-index: 2;
+        animation: snake 2s forwards;
+    }
+
+    .loading-button::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, #fff, transparent);
+        animation: move 2s forwards;
+    }
+
+    @keyframes snake {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(100%);
+        }
+        50% {
+            transform: translateX(100%);
+        }
+        75% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(100%);
+        }
+        75% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+
+</style>
+
 
 <script>
-    const sliderWrapper = document.querySelector('.slider-wrapper');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const slideWidth = document.querySelector('.slide-item').clientWidth;
-    let currentPosition = 0;
-
-    prevBtn.addEventListener('click', () => {
-        currentPosition += slideWidth;
-        sliderWrapper.style.transform = `translateX(${currentPosition}px)`;
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentPosition -= slideWidth;
-        sliderWrapper.style.transform = `translateX(${currentPosition}px)`;
-    });
 
 </script>
 </body>
