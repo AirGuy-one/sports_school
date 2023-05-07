@@ -55,3 +55,7 @@ def support_and_equipment(request):
 
 def vacant_seats(request):
     return render(request, 'vacant_seats.html')
+
+
+def contacts(request):
+    return render(request, 'contacts.html')
