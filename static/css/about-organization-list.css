@@ -1,0 +1,28 @@
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 1200px;
+    position: relative;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../images/field.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(150%);
+    opacity: 0.65;
+    z-index: -1;
+}
+
+main h1, p {
+    margin: 0 0 0 10px;
+    text-align: left;
+    text-shadow: #4b4b4b 2px 2px 10px;
+}
