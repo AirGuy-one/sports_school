@@ -3,6 +3,8 @@ main {
     margin: 0 auto;
     padding-bottom: 1200px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 main::before {
@@ -21,7 +23,12 @@ main::before {
     z-index: -1;
 }
 
+.main-info {
+    max-width: 1100px;
+}
+
 main h1, p {
+    align-self: center;
     margin: 0 0 0 10px;
     text-align: left;
     text-shadow: #4b4b4b 2px 2px 10px;
