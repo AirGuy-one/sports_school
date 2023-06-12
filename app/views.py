@@ -59,3 +59,7 @@ def vacant_seats(request):
 
 def contacts(request):
     return render(request, 'contacts.html')
+
+
+def admission_conditions(request):
+    return render(request, 'admission_conditions.html')
