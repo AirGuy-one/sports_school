@@ -130,16 +130,18 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: center;
-    text-align: center;
+    align-items: flex-end;
+    text-align: right;
     width: auto;
     color: black;
 }
 
 .footer-item p {
-    width: 300px;
+    width: 290px;
+    text-align: center;
 }
 
-.footer-item h3 {
-    font-weight: normal;
+.footer-item:last-child p {
+    margin-right: 10px;
+    width: 280px;
 }
