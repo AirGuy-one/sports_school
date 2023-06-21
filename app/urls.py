@@ -4,6 +4,7 @@ from django.urls import path
 urlpatterns = [
     path('', views.index, name='home'),
     path('download', views.download_file, name='download'),
+    path('news', views.news, name='news_url'),
     path('basic_info', views.basic_info, name='basic_info_url'),
     path('structure_management', views.structure_management, name='structure_management_url'),
     path('available_environment', views.available_environment, name='available_environment_url'),

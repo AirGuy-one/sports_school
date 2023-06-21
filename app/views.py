@@ -9,11 +9,11 @@ from .models import News, Games
 
 
 def index(request):
-    news = News.objects.all().order_by('-id').prefetch_related('photos')
+    news_from_db = News.objects.all().order_by('-id').prefetch_related('photos')
     games = Games.objects.all()
 
     context = {
-        'news': news,
+        'news': news_from_db,
     }
 
     return render(request, 'index.html', context)
@@ -32,6 +32,17 @@ def download_file(request):
 
     response.write(file_content)
     return response
+
+
+def news(request):
+    news_from_db = News.objects.all().order_by('-id').prefetch_related('photos')
+    games = Games.objects.all()
+
+    context = {
+        'news': news_from_db,
+    }
+
+    return render(request, 'news.html', context)
 
 
 def basic_info(request):
