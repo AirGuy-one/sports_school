@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head-links %}
+    <link rel="stylesheet" href="{% static 'css/index-style.css' %}">{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="news">
+            <a id="news-section"></a>
+            <h2>Новости спортивной школы</h2>
+            <div class="img-articles">
+                {% for one_news in news %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                        <div class="flip-box-article">
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    {% if one_news.first_photo %}
+                                        <div class="image">
+                                            <img src="{{ one_news.first_photo }}" alt="">
+                                        </div>
+                                    {% else %}
+                                        <div class="image">
+                                            <h2>Здесь нет фото</h2>
+                                            <p>Дополнительная информация о нашей школе</p>
+                                        </div>
+                                    {% endif %}
+                                    <div class="image-back">
+                                        <h2>Amazing</h2>
+                                        <p>Обратная сторона карточки</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article">
+                                <h3>{{ one_news.title }}</h3>
+                                <p>{{ one_news.description }}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="flip-box-article">
+                            <div class="article">
+                                <h3>{{ one_news.title }}</h3>
+                                <p>{{ one_news.description }}</p>
+                            </div>
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    {% if one_news.first_photo %}
+                                        <div class="image">
+                                            <img src="{{ one_news.first_photo }}" alt="">
+                                        </div>
+                                    {% else %}
+                                        <div class="image">
+                                            <h2>Здесь нет фото</h2>
+                                            <p>Дополнительная информация о нашей школе</p>
+                                        </div>
+                                    {% endif %}
+                                    <div class="image-back">
+                                        <h2>Amazing</h2>
+                                        <p>Обратная сторона карточки</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <hr>
+{% endblock %}
