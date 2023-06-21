@@ -81,4 +81,4 @@ class Document(models.Model):
         verbose_name_plural = 'Документы'
 
     def __str__(self):
-        return f'Документ из категории {self.category.name} под номером {self.id}'
+        return f'{self.title} - {self.category.name}'
