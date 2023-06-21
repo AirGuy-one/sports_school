@@ -3,6 +3,7 @@ import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
+from urllib.parse import quote
 
 from .models import News, Games
 
@@ -19,15 +20,15 @@ def index(request):
 
 
 def download_file(request):
-    file_path = os.path.join(settings.MEDIA_ROOT,
-                             'files/extract_from_the_register_of_licenses_for_medical_activity.pdf')
-    file_name = os.path.basename(file_path)
+    file_path = os.path.join(settings.MEDIA_ROOT, f"files/{request.GET.get('category')}/{request.GET.get('filename')}")
+    file_name = request.GET.get('filename')
+    encoded_file_name = quote(file_name)
 
     with open(file_path, 'rb') as file:
         file_content = file.read()
 
     response = HttpResponse(content_type='application/octet-stream')
-    response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+    response['Content-Disposition'] = f'attachment; filename="{encoded_file_name}"'
 
     response.write(file_content)
     return response
