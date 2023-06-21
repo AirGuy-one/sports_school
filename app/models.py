@@ -51,3 +51,34 @@ class BackgroundPhoto(models.Model):
 
     def __str__(self):
         return f'Фотка фона номер {self.id}'
+
+
+def document_upload_path(instance, filename):
+    return f'files/{instance.category.name}/{filename}'
+
+
+class DocumentCategory(models.Model):
+    # It is preferable to name categories using the snake case
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name = 'Категория документов'
+        verbose_name_plural = 'Категории документов'
+
+    def __str__(self):
+        return f'Категория документов - {self.name}'
+
+
+class Document(models.Model):
+    title = models.CharField(max_length=200)
+    category = models.ForeignKey(DocumentCategory, on_delete=models.CASCADE)
+    file = models.FileField(upload_to=document_upload_path)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Документ'
+        verbose_name_plural = 'Документы'
+
+    def __str__(self):
+        return f'Документ из категории {self.category.name} под номером {self.id}'

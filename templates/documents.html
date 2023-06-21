@@ -1,5 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head-links %}<link rel="stylesheet" href="{% static 'css/about-organization-list.css' %}">{% endblock %}
 
 {% block main %}
-    <h1>docs info page</h1>
+    <main>
+        <div class="main-info">
+            <h1>Документы</h1>
+            <h2>Учредительные документы</h2>
+            <p>Свидетельство ИНН</p>
+            <p>Свидетельство ОГРН</p>
+            <p>Устав 2022</p>
+            <p>ОГРН: 1144401002602</p>
+            <h2>Лицензии</h2>
+            <p><a href="{% url 'download' %}">Выписка из реестра лицензий на осуществление мед. деятельности</p>
+        </div>
+    </main>
 {% endblock %}

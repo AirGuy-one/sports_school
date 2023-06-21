@@ -1,5 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head-links %}<link rel="stylesheet" href="{% static 'css/about-organization-list.css' %}">{% endblock %}
 
 {% block main %}
-    <h1>finance info page</h1>
+    <main>
+        <div class="main-info">
+            <h1>Основные сведения о школе</h1>
+            <p>Полное наименование: ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ ДОПОЛНИТЕЛЬНОГО ОБРАЗОВАНИЯ КОСТРОМСКОЙ ОБЛАСТИ
+                «СПОРТИВНАЯ ШКОЛА ИМЕНИ ВЫДАЮЩЕГОСЯ ЗЕМЛЯКА ГЕОРГИЯ АЛЕКСАНДРОВИЧА ЯРЦЕВА»</p>
+            <p>Краткое наименование: ГБУ ДО КО «СШ им. Г.А. Ярцева»</p>
+            <p>ИНН: 4401150265</p>
+            <p>КПП: 440101001</p>
+            <p>ОГРН: 1144401002602</p>
+        </div>
+    </main>
 {% endblock %}

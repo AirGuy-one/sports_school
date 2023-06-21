@@ -1,138 +1,92 @@
-* {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
-}
-
-header {
-    background-color: black;
-}
-
-.header-div {
-    margin: 0 12%;
-    padding: 0 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-wrapper {
-    height: 80px;
-}
-
-.logo-wrapper img {
-    height: 80px;
-    width: 80px;
-}
-
-.about {
-    display: flex;
-}
-
-.about a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 24px;
-    padding: 10px 20px;
-    color: white;
-    width: auto;
-    height: 66px;
-    text-align: center;
-    transition: font-size 0.3s ease-in-out;
-    border: 1px black solid;
-}
-
-.about a:hover {
-    text-decoration: none;
-    border: 1px white solid;
-    animation: blink 0.5s;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.7; }
-  100% { opacity: 1; }
-}
-
-.dropdown {
-    position: relative;
-    z-index: 2;
-}
-
-.drop-btn {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    min-width: 500px;
-}
-
-.dropdown-content a {
-    font-size: 20px;
-    padding: 10px 20px;
-    text-decoration: none;
-    background: #ffffff;
-    color: #757575;
-    width: auto;
-    height: auto;
-    border: none;
-}
-
-.dropdown-content a:hover {
-    font-size: 20px;
-    background: #757575;
-    color: #ffffff;
-    transition: background 0.1s ease-in-out;
-    border: none;
-    animation: none;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.main-div {
-    height: 35em;
-    position: relative;
+.slider-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 35em;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 
-.background-image-layer {
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100vh;
+}
+
+.school-name-text-btns {
     position: absolute;
-    top: 0;
-    left: 0;
+    z-index: 1;
+    max-width: 1200px;
+    bottom: 0.5em;
+    left: 80%;
+    transform: translateX(-60%);
+}
+
+.school-name-text-btns button {
+    border: none;
+    background-color: #F2F2F2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    color: #444444;
+    margin-left: 0.5em;
+}
+
+.school-name-text-btns button:hover {
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.slide-item {
+    flex-shrink: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/media/background_images/football_game.jpg");
-    background-size: cover;
-    opacity: 0.5;
 }
 
-.main-div p {
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+}
+
+.school-name-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: center;
-    font-size: 6em;
+    z-index: 1;
+    max-width: 1200px;
+}
+
+.school-name-text p {
+    font-weight: bold;
+    text-shadow: #4b4b4b 2px 2px 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-container p {
+    text-align: center;
+    font-size: 3em;
     position: relative;
     z-index: 1;
     color: black;
 }
 
-.news {
-    margin: 0 12%;
-    padding-bottom: 4em;
+.news h2, .img-articles {
+    max-width: 1200px;
+}
+
+.news .img-articles {
+    padding-bottom: 3em;
 }
 
 .news h2 {
@@ -233,12 +187,21 @@ img {
 
 .games-places {
     background-color: black;
-    padding: 30px 0;
+    padding: 30px 0 0 0;
+    margin-bottom: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*.games-places h2, th, td {*/
 /*    font-family: Fjalla One, serif;*/
 /*}*/
+
+.games-places h2, .ptable {
+    width: 1200px;
+}
 
 .games-places h2 {
     text-align: center;
@@ -246,7 +209,6 @@ img {
     font-size: 45px;
     color: #ffe221;
     display: block;
-
 }
 
 .ptable table {
@@ -305,38 +267,3 @@ table .col {
 .pos:hover td {
     color: #000000;
 }
-
-footer {
-    background-color: white;
-}
-
-.footer-div {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 12%;
-    padding: 20px 0;
-}
-
-.footer-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    text-align: center;
-    width: 10em;
-    color: black;
-}
-
-.footer-item p {
-    width: 300px;
-}
-
-.footer-item h3 {
-    font-weight: normal;
-}
-
-
-
-
-
-

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head-links %}
+    <link rel="stylesheet" href="{% static 'css/about-organization-list.css' %}">{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="main" style="display: flex; flex-direction: column">
+            <h1 style="margin: 20px 0;">С днём России, друзья!!!</h1>
+            <img src="{% static 'images/holiday.jpg' %}" alt="Holiday" style="width: 1200px; height: 750px;">
+        </div>
+    </main>
+{% endblock %}

@@ -1,4 +1,9 @@
+import os
+
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.conf import settings
+
 from .models import News, Games
 
 
@@ -11,6 +16,21 @@ def index(request):
     }
 
     return render(request, 'index.html', context)
+
+
+def download_file(request):
+    file_path = os.path.join(settings.MEDIA_ROOT,
+                             'files/extract_from_the_register_of_licenses_for_medical_activity.pdf')
+    file_name = os.path.basename(file_path)
+
+    with open(file_path, 'rb') as file:
+        file_content = file.read()
+
+    response = HttpResponse(content_type='application/octet-stream')
+    response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+
+    response.write(file_content)
+    return response
 
 
 def basic_info(request):
@@ -55,3 +75,11 @@ def support_and_equipment(request):
 
 def vacant_seats(request):
     return render(request, 'vacant_seats.html')
+
+
+def contacts(request):
+    return render(request, 'contacts.html')
+
+
+def admission_conditions(request):
+    return render(request, 'admission_conditions.html')

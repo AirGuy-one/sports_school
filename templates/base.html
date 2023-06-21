@@ -8,7 +8,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ГБУ ДО КО «СШ  им. Г.А. Ярцева»</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/basic-style.css' %}">
+    {% block head-links %}{% endblock %}
 </head>
 <body>
 <header>
@@ -33,9 +34,9 @@
                     <a href="{% url "international_cooperation_url" %}">Международное сотрудничество</a>
                 </div>
             </div>
-            <a href="#" title="faq">Новости</a>
-            <a href="#" title="support">Условия приема</a>
-            <a href="#" title="contacts">Контакты</a>
+            <a href="#news-section" title="faq">Новости</a>
+            <a href="{% url "admission_conditions_url" %}" title="support">Условия приема</a>
+            <a href="{% url "contacts_url" %}">Контакты</a>
 
         </div>
     </div>
@@ -49,15 +50,15 @@
             <p>© 2013–2023 ГБУ ДО КО «СШ  им. Г.А. Ярцева»</p>
         </div>
         <div class="footer-item">
-            <h3>телефон</h3>
+            <p>телефон</p>
             <p>+7 (4942) 41-41-31</p>
         </div>
         <div class="footer-item">
-            <h3>адрес</h3>
+            <p>адрес</p>
             <p>156016, Костромская область, город Кострома, микрорайон Давыдовский-3, дом. 19.</p>
         </div>
         <div class="footer-item">
-            <h3>социальные сети</h3>            
+            <p>социальные сети</p>
             <p>ВК</p>
         </div>
     </div>

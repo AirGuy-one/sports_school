@@ -1,15 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head-links %}
+    <link rel="stylesheet" href="{% static 'css/index-style.css' %}">{% endblock %}
 
 {% block main %}
     <main>
-        <div class="main-div">
-            <div class="background-image-layer"></div>
-            <div class="txt-here">
-                <p>Спортивная школа</p>
-                <p>номер 3</p>
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide-item">
+                    <img src="{% static 'images/image1.jpg' %}" alt="Slide 1">
+                </div>
+                <div class="slide-item">
+                    <img src="{% static 'images/image2.jpg' %}" alt="Slide 2">
+                </div>
+                <div class="slide-item">
+                    <img src="{% static 'images/image3.jpg' %}" alt="Slide 3">
+                </div>
+                <div class="slide-item">
+                    <img src="{% static 'images/image4.jpg' %}" alt="Slide 4">
+                </div>
+                <div class="slide-item">
+                    <img src="{% static 'images/image5.jpg' %}" alt="Slide 5">
+                </div>
+            </div>
+            <div class="school-name-text">
+                <p>Спортивная школа имени выдающегося земляка</p>
+                <p>Георгия Александровича Ярцева</p>
+            </div>
+            <div class="school-name-text-btns">
+                <button><</button>
+                <button>></button>
             </div>
         </div>
         <div class="news">
+            <a id="news-section"></a>
             <h2>Новости спортивной школы</h2>
             <div class="img-articles">
                 {% for one_news in news %}
@@ -100,4 +125,53 @@
             </div>
         </div>
     </main>
+
+    <script>
+        // This is slider realization
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        const slideItems = document.querySelectorAll('.slide-item');
+        let slideIndex = 0;
+        let goAhead = true;
+
+        function goToSlide(index) {
+            sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+            slideIndex = index;
+        }
+
+        function nextSlide() {
+            if (goAhead) {
+                if (slideIndex === slideItems.length - 1) {
+                    goAhead = false;
+                } else {
+                    goToSlide(slideIndex + 1);
+                }
+            } else {
+                if (slideIndex === 0) {
+                    goAhead = true;
+                } else {
+                    goToSlide(slideIndex - 1);
+                }
+            }
+        }
+
+        setInterval(() => {
+            nextSlide();
+        }, 5000);
+
+        // This is buttons realization
+        const prevButton = document.querySelector('.school-name-text-btns button:first-child');
+        const nextButton = document.querySelector('.school-name-text-btns button:last-child');
+
+        prevButton.addEventListener('click', () => {
+            const newIndex = slideIndex === 0 ? slideItems.length - 1 : slideIndex - 1;
+            goToSlide(newIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            const newIndex = slideIndex === slideItems.length - 1 ? 0 : slideIndex + 1;
+            goToSlide(newIndex);
+        });
+
+
+    </script>
 {% endblock %}
