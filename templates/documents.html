@@ -8,14 +8,14 @@
         <div class="main-info">
             <h1>Документы</h1>
             <h2 style="margin-top: 24px;">Учредительные документы</h2>
-            <p><a href="{% url 'download' %}?filename=ИНН.pdf&category=Учредительные_документы">Свидетельство ИНН</a></p>
+            <p><a href="{% url 'download' %}?filename={{ inn }}&category=Учредительные_документы">Свидетельство ИНН</a></p>
             <p>Свидетельство ОГРН</p>
             <p>Устав 2022</p>
             <p>ОГРН: 1144401002602</p>
             <h2 style="margin-top: 24px;">Лицензии</h2>
-            <p><a href="{% url 'download' %}?filename=Выписка_из_реестра_лицензий_на_осуществление_мед._деятельности.pdf&category=Лицензии">Выписка из реестра лицензий на осуществление мед. деятельности</a></p>
+            <p><a href="{% url 'download' %}?filename={{ extract_from_register }}&category=Лицензии">Выписка из реестра лицензий на осуществление мед. деятельности</a></p>
             <h2 style="margin-top: 24px;">Локальные акты</h2>
-            <p><a href="{% url 'download' %}?filename=Положение_о_логотипе.pdf&category=Локальные_акты">Положение о логотипе</a></p>
+            <p><a href="{% url 'download' %}?filename={{ logo_regulations }}&category=Локальные_акты">Положение о логотипе</a></p>
             <p></p>
             <p></p>
             <h2 style="margin-top: 24px;">~</h2>

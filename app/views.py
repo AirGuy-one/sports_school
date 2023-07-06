@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from urllib.parse import quote
 
-from .models import News, Games
+from .models import News, Games, Document, DocumentCategory
 
 
 def index(request):
@@ -58,11 +58,20 @@ def available_environment(request):
 
 
 def documents(request):
-    return render(request, 'documents.html')
+    documents_files = Document.objects.all()
+    context = {
+        'extract_from_register': documents_files.filter(id=1),
+        'logo_regulations': documents_files.filter(id=2),
+        'inn': documents_files.filter(id=3),
+        'additional_educational_program': documents_files.filter(id=4)
+    }
+    return render(request, 'documents.html', context)
 
 
 def education(request):
-    return render(request, 'education.html')
+    document = Document.objects.last()
+    document_name = str(document.file).split('/')[-1]
+    return render(request, 'education.html', {'document_name': document_name})
 
 
 def financial_and_economic(request):
