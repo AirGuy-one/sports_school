@@ -1,6 +1,6 @@
 import os
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.conf import settings
 from urllib.parse import quote
@@ -58,12 +58,11 @@ def available_environment(request):
 
 
 def documents(request):
-    documents_files = Document.objects.all()
     context = {
-        'extract_from_register': documents_files.filter(id=1),
-        'logo_regulations': documents_files.filter(id=2),
-        'inn': documents_files.filter(id=3),
-        'additional_educational_program': documents_files.filter(id=4)
+        'extract_from_register': get_object_or_404(Document, pk=1),
+        'logo_regulations': get_object_or_404(Document, pk=2),
+        'inn': get_object_or_404(Document, pk=3),
+        'additional_educational_program': get_object_or_404(Document, pk=4)
     }
     return render(request, 'documents.html', context)
 
