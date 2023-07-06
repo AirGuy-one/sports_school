@@ -59,10 +59,10 @@ def available_environment(request):
 
 def documents(request):
     context = {
-        'extract_from_register': get_object_or_404(Document, pk=1),
-        'logo_regulations': get_object_or_404(Document, pk=2),
-        'inn': get_object_or_404(Document, pk=3),
-        'additional_educational_program': get_object_or_404(Document, pk=4)
+        'extract_from_register': str(get_object_or_404(Document, pk=1).file).split('/')[-1],
+        'logo_regulations': str(get_object_or_404(Document, pk=2).file).split('/')[-1],
+        'inn': str(get_object_or_404(Document, pk=3).file).split('/')[-1],
+        'additional_educational_program': str(get_object_or_404(Document, pk=4).file).split('/')[-1]
     }
     return render(request, 'documents.html', context)
 
