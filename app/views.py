@@ -103,3 +103,8 @@ def contacts(request):
 
 def admission_conditions(request):
     return render(request, 'admission_conditions.html')
+
+
+def catering(request):
+    return render(request, 'catering.html')
+

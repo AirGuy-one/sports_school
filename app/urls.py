@@ -18,4 +18,5 @@ urlpatterns = [
     path('vacant_seats', views.vacant_seats, name='vacant_seats_url'),
     path('contacts', views.contacts, name='contacts_url'),
     path('admission_conditions', views.admission_conditions, name='admission_conditions_url'),
+    path('catering', views.catering, name='catering_url'),
 ]
