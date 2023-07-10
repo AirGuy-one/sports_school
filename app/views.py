@@ -60,7 +60,13 @@ def available_environment(request):
 
 def documents(request):
     docs = Document.objects.filter(pk__range=(13, 29)).select_related('category')
-    return render(request, 'documents.html', {'docs': docs})
+    anti_doping = Document.objects.filter(pk__range=(30, 32)).select_related('category')
+    context = {
+        'docs': docs,
+        'anti_doping': anti_doping,
+
+    }
+    return render(request, 'documents.html', context)
 
 
 def education(request):

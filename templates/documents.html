@@ -9,7 +9,15 @@
         <div class="main-info">
             <h1>Документы</h1>
             {% for doc in docs %}
-                <p><a href="{% url 'download' %}?filename={{ doc.file }}&category={{ i.category.name }}">{{ doc.title }}</a></p>
+                <p>
+                    <a href="{% url 'download' %}?filename={{ doc.file }}&category={{ doc.category.name }}">{{ doc.title }}</a>
+                </p>
+            {% endfor %}
+            <h2>Антидопинг</h2>
+            {% for component in anti_doping %}
+                <p>
+                    <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
+                </p>
             {% endfor %}
         </div>
     </main>
