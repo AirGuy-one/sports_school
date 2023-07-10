@@ -59,13 +59,8 @@ def available_environment(request):
 
 
 def documents(request):
-    context = {
-        'extract_from_register': str(get_object_or_404(Document, pk=1).file).split('/')[-1],
-        'logo_regulations': str(get_object_or_404(Document, pk=2).file).split('/')[-1],
-        'inn': str(get_object_or_404(Document, pk=3).file).split('/')[-1],
-        'additional_educational_program': str(get_object_or_404(Document, pk=4).file).split('/')[-1]
-    }
-    return render(request, 'documents.html', context)
+    docs = Document.objects.filter(pk__range=(13, 29)).select_related('category')
+    return render(request, 'documents.html', {'docs': docs})
 
 
 def education(request):

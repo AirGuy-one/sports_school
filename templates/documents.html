@@ -1,25 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block head-links %}<link rel="stylesheet" href="{% static 'css/about-organization-list.css' %}">{% endblock %}
+{% block head-links %}
+    <link rel="stylesheet" href="{% static 'css/about-organization-list.css' %}">{% endblock %}
 
 {% block main %}
     <main>
         <div class="main-info">
             <h1>Документы</h1>
             <h2 style="margin-top: 24px;">Учредительные документы</h2>
-            <p><a href="{% url 'download' %}?filename={{ inn }}&category=Учредительные_документы">Свидетельство ИНН</a></p>
+            <p><a href="{% url 'download' %}?filename={{ inn }}&category=Учредительные_документы">Свидетельство ИНН</a>
+            </p>
             <p>Свидетельство ОГРН</p>
             <p>Устав 2022</p>
             <p>ОГРН: 1144401002602</p>
-            <p><a href="{% url 'download' %}?filename={{ extract_from_register }}&category=Лицензии">Выписка из реестра лицензий на осуществление мед. деятельности</a></p>
-            <p></p>
-            <p></p>
-            <h2 style="margin-top: 24px;">~</h2>
-            <p>.</p>
-            <p></p>
-            <p></p>
-            <h1>Идет наполнение сайта...</h1>
+            <p><a href="{% url 'download' %}?filename={{ extract_from_register }}&category=Лицензии">Выписка из реестра
+                лицензий на осуществление мед. деятельности</a></p>
+            <p>separation</p>
+            <hr>
+            {% for doc in docs %}
+                <h2 style="margin-top: 24px;">{{ doc.title }} doc</h2>
+                <p><a href="{% url 'download' %}?filename={{ doc.file }}&category={{ i.category.name }}">{{ doc.title }}</a></p>
+            {% endfor %}
         </div>
     </main>
 {% endblock %}
