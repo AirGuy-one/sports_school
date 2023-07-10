@@ -1,15 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block head-links %}<link rel="stylesheet" href="{% static 'css/about-organization-list.css' %}">{% endblock %}
+{% block head-links %}
+    <link rel="stylesheet" href="{% static 'css/about-organization-list.css' %}">{% endblock %}
 
 {% block main %}
     <main>
         <div class="main-info">
             <h2 style="margin-top: 24px;">ГЗ 2023</h2>
-            <p><a href="{% url 'download' %}?filename={{ state_order_document_name }}&category=Локальные_акты">ГЗ 2023</a></p>
+            <p><a href="{% url 'download' %}?filename={{ state_order_document_name }}&category=Локальные_акты">ГЗ
+                2023</a></p>
             <h2 style="margin-top: 24px;">ПФХД на 2023</h2>
-            <p><a href="{% url 'download' %}?filename={{ plan_document_name }}&category=Локальные_акты">ПФХД на 2023</a></p>
+            <p><a href="{% url 'download' %}?filename={{ plan_document_name }}&category=Локальные_акты">ПФХД на 2023</a>
+            </p>
+            <h2><a href="https://bus.gov.ru/info-card/342690">ОФИЦИАЛЬНЫЙ САЙТ для размещения информации о
+                государственных (муниципальных) учреждениях</a></h2>
         </div>
     </main>
 {% endblock %}
