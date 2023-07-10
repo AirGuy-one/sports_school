@@ -50,7 +50,8 @@ def basic_info(request):
 
 
 def structure_management(request):
-    return render(request, 'structure_and_management.html')
+    document_name = str(get_object_or_404(Document, title='Положение_Академии_футбола').file).split('/')[-1]
+    return render(request, 'structure_and_management.html', {'document_name': document_name})
 
 
 def available_environment(request):
@@ -68,8 +69,8 @@ def documents(request):
 
 
 def education(request):
-    document = Document.objects.last()
-    document_name = str(document.file).split('/')[-1]
+    title_of_document = 'Дополнительная_образовательная_программа_спортивной_подготовки_по_виду_спорта_футбол'
+    document_name = str(get_object_or_404(Document, title=title_of_document).file).split('/')[-1]
     return render(request, 'education.html', {'document_name': document_name})
 
 
