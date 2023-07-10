@@ -118,16 +118,13 @@ def contacts(request):
 
 def admission_conditions(request):
     appeal_commission_title = 'Положение_об_апелляционной_комиссии'
-    appeal_commission_document_name = str(get_object_or_404(Document, title=appeal_commission_title).file).split('/')[-1]
+    appeal_commission_document_name = get_object_or_404(Document, title=appeal_commission_title).file
     individual_selection_title = 'Положение_о_порядке_проведении_индивидуального_отбора'
-    individual_selection_document_name = str(
-        get_object_or_404(Document, title=individual_selection_title).file).split('/')[-1]
+    individual_selection_document_name = get_object_or_404(Document, title=individual_selection_title).file
     receiving_commission_title = 'Положение_о_приемной_комиссии'
-    receiving_commission_document_name = str(
-        get_object_or_404(Document, title=receiving_commission_title).file).split('/')[-1]
+    receiving_commission_document_name = get_object_or_404(Document, title=receiving_commission_title).file
     admission_procedure_title = 'Порядок_приема_в_ГБУ_ДО_КО_СШ_им.Ярцева'
-    admission_procedure_document_name = str(
-        get_object_or_404(Document, title=admission_procedure_title).file).split('/')[-1]
+    admission_procedure_document_name = get_object_or_404(Document, title=admission_procedure_title).file
     context = {
         'appeal_commission_document_name': appeal_commission_document_name,
         'individual_selection_document_name': individual_selection_document_name,
