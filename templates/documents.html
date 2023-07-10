@@ -13,7 +13,7 @@
                     <a href="{% url 'download' %}?filename={{ doc.file }}&category={{ doc.category.name }}">{{ doc.title }}</a>
                 </p>
             {% endfor %}
-            <h2>Антидопинг</h2>
+            <h2 style="margin-top: 24px;">Антидопинг</h2>
             {% for component in anti_doping %}
                 <p>
                     <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
