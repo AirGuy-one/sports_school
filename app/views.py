@@ -50,7 +50,7 @@ def basic_info(request):
 
 
 def structure_management(request):
-    document_name = str(get_object_or_404(Document, title='Положение_Академии_футбола').file).split('/')[-1]
+    document_name = get_object_or_404(Document, title='Положение_Академии_футбола').file
     return render(request, 'structure_and_management.html', {'document_name': document_name})
 
 
