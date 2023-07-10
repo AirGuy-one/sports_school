@@ -19,6 +19,42 @@
                     <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
                 </p>
             {% endfor %}
+            <h2 style="margin-top: 24px;">Антитеррористическая защищённость</h2>
+            {% for component in anti_terror %}
+                <p>
+                    <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
+                </p>
+            {% endfor %}
+            <h2 style="margin-top: 24px;">Защита персональных данных</h2>
+            {% for component in personal_data_security %}
+                <p>
+                    <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
+                </p>
+            {% endfor %}
+            <h2 style="margin-top: 24px;">Информация для родителей</h2>
+            {% for component in info_for_parents %}
+                <p>
+                    <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
+                </p>
+            {% endfor %}
+            <h2 style="margin-top: 24px;">Медицинская деятельность</h2>
+            {% for component in medical_activity %}
+                <p>
+                    <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
+                </p>
+            {% endfor %}
+            <h3 style="margin-top: 24px;">Изменение_о_переименовании</h3>
+            {% for component in name_changing %}
+                <p>
+                    <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
+                </p>
+            {% endfor %}
+            <h2 style="margin-top: 24px;">Противодействие коррупции</h2>
+            {% for component in anti_corruption %}
+                <p>
+                    <a href="{% url 'download' %}?filename={{ component.file }}&category={{ component.category.name }}">{{ component.title }}</a>
+                </p>
+            {% endfor %}
         </div>
     </main>
 {% endblock %}

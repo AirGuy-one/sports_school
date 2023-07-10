@@ -3,6 +3,7 @@ import os
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.conf import settings
+from django.db.models import Q
 from urllib.parse import quote
 
 from .models import News, Games, Document, DocumentCategory
@@ -62,12 +63,23 @@ def documents(request):
     docs = Document.objects.filter(pk__range=(1, 29)).select_related('category')
     anti_doping = Document.objects.filter(pk__range=(30, 32)).select_related('category')
     anti_terror = Document.objects.filter(pk__range=(33, 36)).select_related('category')
+    personal_data_security = Document.objects.filter(pk__range=(38, 41)).select_related('category')
+    info_for_parents = Document.objects.filter(pk__range=(42, 49)).select_related('category')
+
+    medical_activity = Document.objects.filter(Q(pk=1) | Q(pk=50)).select_related('category')
+    name_changing = Document.objects.filter(pk__range=(51, 52)).select_related('category')
+
+    anti_corruption = Document.objects.filter(pk__range=(53, 58)).select_related('category')
 
     context = {
         'docs': docs,
         'anti_doping': anti_doping,
         'anti_terror': anti_terror,
-
+        'personal_data_security': personal_data_security,
+        'info_for_parents': info_for_parents,
+        'medical_activity': medical_activity,
+        'name_changing': name_changing,
+        'anti_corruption': anti_corruption
     }
     return render(request, 'documents.html', context)
 
