@@ -19,4 +19,6 @@ urlpatterns = [
     path('contacts', views.contacts, name='contacts_url'),
     path('admission_conditions', views.admission_conditions, name='admission_conditions_url'),
     path('catering', views.catering, name='catering_url'),
+    path('educational_standards_and_requirements', views.educational_standards_and_requirements,
+         name='educational_standards_and_requirements_url'),
 ]

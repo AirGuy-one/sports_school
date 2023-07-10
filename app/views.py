@@ -109,3 +109,6 @@ def admission_conditions(request):
 def catering(request):
     return render(request, 'catering.html')
 
+
+def educational_standards_and_requirements(request):
+    return render(request, 'educational_standards_and_requirements.html')
