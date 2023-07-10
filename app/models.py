@@ -59,7 +59,7 @@ def document_upload_path(instance, filename):
 
 class DocumentCategory(models.Model):
     # It is preferable to name categories using the snake case
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
 
     class Meta:
         verbose_name = 'Категория документов'
