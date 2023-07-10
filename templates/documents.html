@@ -9,7 +9,6 @@
         <div class="main-info">
             <h1>Документы</h1>
             {% for doc in docs %}
-                <h2 style="margin-top: 24px;">{{ doc.title }} doc</h2>
                 <p><a href="{% url 'download' %}?filename={{ doc.file }}&category={{ i.category.name }}">{{ doc.title }}</a></p>
             {% endfor %}
         </div>
