@@ -75,7 +75,15 @@ def education(request):
 
 
 def financial_and_economic(request):
-    return render(request, 'financial_and_economic.html')
+    state_order_title = 'ГЗ_2023'
+    state_order_document_name = str(get_object_or_404(Document, title=state_order_title).file).split('/')[-1]
+    plan_title = 'ПФХД_на_2023'
+    plan_document_name = str(get_object_or_404(Document, title=plan_title).file).split('/')[-1]
+    context = {
+        'state_order_document_name': state_order_document_name,
+        'plan_document_name': plan_document_name
+    }
+    return render(request, 'financial_and_economic.html', context)
 
 
 def international_cooperation(request):
