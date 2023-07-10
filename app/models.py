@@ -72,7 +72,7 @@ class DocumentCategory(models.Model):
 class Document(models.Model):
     title = models.CharField(max_length=200)
     category = models.ForeignKey(DocumentCategory, on_delete=models.CASCADE)
-    file = models.FileField(upload_to=document_upload_path)
+    file = models.FileField(upload_to=document_upload_path, max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
