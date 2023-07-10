@@ -91,7 +91,12 @@ def international_cooperation(request):
 
 
 def paid_services(request):
-    return render(request, 'paid_services.html')
+    title_of_document = 'положение_о_порядке_поступления_и_использования_средств,_полученных_от_предпринимательской_и_иной_приносящей_доход_деятельности'
+    document_name = str(get_object_or_404(Document, title=title_of_document).file).split('/')[-1]
+    context = {
+        'document_name': document_name
+    }
+    return render(request, 'paid_services.html', context)
 
 
 def pedagogical_staff(request):
