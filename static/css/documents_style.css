@@ -27,12 +27,16 @@ main::before {
     width: 1100px;
 }
 
-main p {
+.main-info p {
     align-self: center;
     text-align: left;
     text-shadow: #4b4b4b 2px 2px 10px;
 }
 
-main p a {
-    max-width: 1100px;
+.main-info p a {
+    max-width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
